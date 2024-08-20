@@ -805,11 +805,6 @@ video {
   padding-right: 2rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -830,6 +825,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -840,6 +839,10 @@ video {
 
 .pb-6 {
   padding-bottom: 1.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pl-12 {
@@ -941,6 +944,8 @@ video {
   opacity: 0.6;
 }
 
+/* Form Styling */
+
 .contact_form {
   border-radius: 0.75rem;
   padding-top: 1rem;
@@ -954,19 +959,14 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.project_title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-}
-
-.project_title:hover {
-  text-decoration-line: underline;
-}
+/* Project Squares */
 
 .project_square {
+  display: flex;
   width: 100%;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -981,12 +981,24 @@ video {
   }
 }
 
+.project_title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.project_title:hover {
+  text-decoration-line: underline;
+}
+
 .project_cover {
   aspect-ratio: 1 / 1;
-  height: 100%;
-  width: 100%;
+  height: 95%;
+  width: 95%;
   border-radius: 0.75rem;
 }
+
+/* Customer Quotes */
 
 .quotes {
   width: 100%;
@@ -1048,10 +1060,6 @@ video {
 
   .md\:p-0 {
     padding: 0px;
-  }
-
-  .md\:p-24 {
-    padding: 6rem;
   }
 
   .md\:px-12 {
@@ -1127,8 +1135,16 @@ video {
     flex-direction: row;
   }
 
+  .lg\:p-12 {
+    padding: 3rem;
+  }
+
   .lg\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .lg\:pb-12 {
+    padding-bottom: 3rem;
   }
 }
