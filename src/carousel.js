@@ -12,50 +12,33 @@ const carousel_imgs = [
   "../images/slideshow/white_blue_brass_bronx.jpg",
 ];
 
-let left_carousel_index = 0;
-let right_carousel_index = 1;
+let img_index = 0;
 
-function scroll_left(){
-    // Carousel images
-    let left_carousel_img = document.getElementById("left_carousel_img");
-    let right_carousel_img = document.getElementById("right_carousel_img");
-    // Shift the img indices
-    left_carousel_index -= 1;
-    right_carousel_index -= 1;
-    if(left_carousel_index == -1) left_carousel_index = 5;
-    if(right_carousel_index == -1) right_carousel_index = 5;
-    // Re-assign the image srcs
-    left_carousel_img.src = carousel_imgs[left_carousel_index];
-    right_carousel_img.src = carousel_imgs[right_carousel_index];
-}
-
-function scroll_right(){
-    console.log("Right");
-    // Carousel images
-    let left_carousel_img = document.getElementById("left_carousel_img");
-    let right_carousel_img = document.getElementById("right_carousel_img");
-    // Shift the img indices
-    left_carousel_index += 1
-    right_carousel_index += 1
-    if(left_carousel_index == 6) left_carousel_index = 0;
-    if(right_carousel_index == 6) right_carousel_index = 0;
-    // Re-assign the image srcs
-    left_carousel_img.src = carousel_imgs[left_carousel_index];
-    right_carousel_img.src = carousel_imgs[right_carousel_index];
+function scroll(direction) {
+  console.log("left");
+  console.log(img_index + " " + (img_index + 7) % 6);
+  // Carousel images
+  let left_carousel_img = document.getElementById("left_carousel_img");
+  let right_carousel_img = document.getElementById("right_carousel_img");
+  // Shift the image indices
+  img_index = (img_index + direction + 6) % 6;
+  // Re-assign the image srcs
+  left_carousel_img.src = carousel_imgs[img_index];
+  right_carousel_img.src = carousel_imgs[(img_index + 7) % 6];
 }
 
 function main() {
   // Carousel Buttons
   const left_carousel_button = document.getElementById("left_carousel_button");
-  const right_carousel_button = document.getElementById("right_carousel_button");
+  const right_carousel_button = document.getElementById(
+    "right_carousel_button",
+  );
   // Carousel Left Button
-  left_carousel_button.addEventListener('click', () => scroll_left());
+  left_carousel_button.addEventListener("click", () => scroll(-1));
   // Carousel Right Button
-  right_carousel_button.addEventListener('click', () => scroll_right());
-
+  right_carousel_button.addEventListener("click", () => scroll(1));
   // Automatic Carousel Scrolling
-  setInterval(() => {scroll_right();}, 3500);
-  
-
-
+  setInterval(() => {
+    scroll(1);
+  }, 3500);
 }

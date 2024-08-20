@@ -1,45 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="output.css" />
 </head>
-<body class="bg-[#434946]">
-    
+
+<body class="flex flex-col bg-[#434946] text-white">
     <!-- Header -->
-    <div class="flex w-full min-h-[16.67%] h-auto p-9 text-xl justify-between">
+    <div class="flex h-auto min-h-[16.67%] w-full flex-col justify-between p-9 text-xl md:flex-row">
         <!-- FitzPatrick Design Inc. -->
         <div class="text-white">
-            <button onclick="index.html" class="text-left text-[46px] leading-[1] tracking-[0.3em]">
+            <button onclick="index.html" class="text-left text-4xl leading-[1] tracking-[0.3em] md:text-[46px]">
                 FITZPATRICK DESIGN, INC.
             </button>
-            <h2 class="mt-4 tracking-widest text-2xl text-[#aec7c0]">
+            <h2 class="mt-4 text-2xl tracking-widest text-[#aec7c0]">
                 Cabinetry design for any room in your home
             </h2>
         </div>
         <!-- Navigation Bar -->
         <nav
-            class="m-0 flex flex-col md:flex-row justify-center list-none text-center tracking-[0.2em] text-[#aec7c0] items-center">
+            class="m-0 flex list-none flex-col items-center justify-center text-center tracking-[0.2em] text-[#aec7c0] md:flex-row">
             <a href="index.html" class="p-4 hover:underline">HOME</a>
-            <a href="about.html" class="p-4 hover:underline text-white font-bold">ABOUT</a>
+            <a href="about.html" class="p-4 font-bold text-white hover:underline">ABOUT</a>
             <a href="projects.html" class="p-4 hover:underline">PROJECTS</a>
             <a href="contacts.html" class="p-4 hover:underline">CONTACTS</a>
         </nav>
     </div>
 
     <!-- Img and Title -->
-    <div class="flex flex-col justify-center h-1/2 md:flex-row text-white text-4xl tracking-[0.2em]">
+    <div class="flex h-1/2 flex-col justify-center md:flex-row">
         <!-- Christine Fitz Img -->
-        <img class="p-12 px-24" src="../images/christine_fitzpatrick.png">
+        <img class="py-12 pl-12 pr-12 md:pl-24 md:pr-0" src="../images/christine_fitzpatrick.png" />
         <!-- Title -->
-        <div class="flex flex-col justify-center w-2/5 h-auto">
-            <h1 class="flex">
+        <div class="flex h-auto w-full flex-col justify-center pl-12 md:w-2/5">
+            <h1 class="pb-12 text-2xl tracking-[0.2em] md:text-4xl">
                 Delivering the best design and service in the industry since 2003.
             </h1>
         </div>
     </div>
 
+    <!-- Quote -->
+    <div class="flex h-64 w-full flex-col items-center justify-center space-y-3 bg-slate-600 text-center">
+        <p class="text-4xl font-light tracking-wider">
+            "the kitchen in my home is to die for"
+        </p>
+        <p class="text-2xl tracking-[0.2em]">MARTHA BOUCHER</p>
+    </div>
+
+    <!-- Proven record of success title -->
+    <h1 class="px-4 pb-4 pt-20 text-center text-4xl font-bold tracking-wide">
+        Our proven record of success
+    </h1>
+    <!-- Record of success quotes grid -->
+    <div class="flex flex-wrap px-4 md:px-12 lg:px-24">
+        <!-- S R Review -->
+        <div class="quotes">
+            <h1 class="py-2 text-3xl font-bold">S R:</h1>
+            <p class="text-xl">
+                "Christine and Edward of Fitzpatrick Designs did an amazing job on our
+                kitchen redesign. From the first meeting to the final day they were
+                thoughtful, responsive and actively involved. They are a pleasure to
+                work with – the entire process was painless (and that’s saying a lot
+                for a full kitchen reno.) The design was executed perfectly, on time
+                and on budget. We started with a dark, interior kitchen from the 50’s
+                and ended with a bright, cheerful space that perfectly suits our
+                family’s needs. Edward’s cabinet installation was meticulous and done
+                with great pride. The fact that they are locally based is a strong
+                plus as well. We very strongly recommend Christine and Edward for your
+                project. They are a great team."
+            </p>
+            <a class="text-xl font-bold hover:underline" href="https://www.houzz.com/viewReview/1303743/s-r">Read
+                More...</a>
+        </div>
+
+        <!-- Houzz User #1 -->
+        <div class="quotes">
+            <h1 class="py-2 text-3xl font-bold">Houzz User:</h1>
+            <p class="text-xl">
+                "Over the past 10 years Ed has helped me with nunerous custom projects
+                in 3 diff homes - fixing kitchen cabinetry and molding after a leak,
+                creating addtl cabinetry to match existing kitchen and repairing
+                various items. Quality work - always done efficiently and honestly and
+                with a smile. Local roots in community are a plus!"
+            </p>
+            <a class="text-xl font-bold hover:underline" href="https://www.houzz.com/viewReview/1163482/">Read
+                More...</a>
+        </div>
+
+        <!-- Houzz User #2 -->
+        <div class="quotes">
+            <h1 class="py-2 text-3xl font-bold">Houzz User:</h1>
+            <p class="text-xl">
+                "The complete replacement of our kitchen cabinets was done
+                professionally. Care was taken at every step and our wishes for the
+                design and materials was respected and used. They are a pleasure to
+                work with. We recommend them to all."
+            </p>
+            <a class="text-xl font-bold hover:underline" href="https://www.houzz.com/viewReview/1163482/">Read
+                More...</a>
+        </div>
+
+        <!-- 360 Painting Monmouth County -->
+        <div class="quotes">
+            <h1 class="py-2 text-3xl font-bold">360 Painting Monmouth County:</h1>
+            <p class="text-xl">
+                "Christine and the rest of the FitzPatrick team did an amazing job on
+                our kitchen redesign. She suggested some ideas that transformed our
+                kitchen/Greatroom into something we had never imagined. The job was
+                done on time and on budget and we would strongly recommend Christine
+                for your next project."
+            </p>
+            <a class="text-xl font-bold hover:underline"
+                href="https://www.houzz.com/viewReview/1090877/360-painting%20monmouth%20county">Read More...</a>
+        </div>
+
+        <!-- Paul Jancski's Review -->
+        <div class="quotes">
+            <h1 class="py-2 text-3xl font-bold">Paul Jancski:</h1>
+            <p class="text-xl">
+                "Fitzpatrick design and cabinetry designed and managed every detail of
+                my new kitchen. The completed project exceeded my expectations and is
+                admired by friends and family."
+            </p>
+            <a class="text-xl font-bold hover:underline"
+                href="https://www.houzz.com/viewReview/1717454/paul-jancski">Read More...</a>
+        </div>
+    </div>
+
+    <!-- Start your next project today -->
+    <div class="flex h-64 w-full flex-col items-center justify-center space-y-4 bg-slate-500">
+        <h1 class="text-center text-3xl tracking-wide text-white">
+            Start your next project today
+        </h1>
+        <a class="w-auto rounded-lg bg-white px-8 py-4 text-xl tracking-[0.2em] text-slate-500" href="contacts.html">
+            Contact Us
+        </a>
+    </div>
+
+    <!-- Navigation and Links -->
+    <div class="flex h-auto min-h-64 w-full flex-col bg-gray-600 py-16 text-[#aec7c0] md:flex-row">
+        <!-- Navigation Bar -->
+        <nav class="m-0 flex list-none flex-col items-center justify-center pl-4 text-center tracking-[0.2em] md:pl-24">
+            <a href="index.html" class="p-4 hover:underline">HOME</a>
+            <a href="about.html" class="p-4 font-bold text-white hover:underline">ABOUT</a>
+            <a href="projects.html" class="p-4 hover:underline">PROJECTS</a>
+            <a href="contacts.html" class="p-4 hover:underline">CONTACTS</a>
+        </nav>
+        <!-- Contact Links -->
+        <div class="flex h-full w-full items-center justify-end">
+            <div class="flex h-fit w-96 flex-col space-y-4 pr-24 text-2xl tracking-wide">
+                <div class>Larchmont, NY 10538</div>
+                <div>(914) 500-5232</div>
+                <div>info@fitzpatrickdesigninc.com</div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
