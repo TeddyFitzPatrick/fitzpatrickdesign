@@ -15,8 +15,6 @@ const carousel_imgs = [
 let img_index = 0;
 
 function scroll(direction) {
-  console.log("left");
-  console.log(img_index + " " + (img_index + 7) % 6);
   // Carousel images
   let left_carousel_img = document.getElementById("left_carousel_img");
   let right_carousel_img = document.getElementById("right_carousel_img");
@@ -41,4 +39,7 @@ function main() {
   setInterval(() => {
     scroll(1);
   }, 3500);
+
+
+
 }
