@@ -2,7 +2,7 @@ function About(){
     return (<>
     {/* Christine Photo and Title  */}
     <div className="flex h-1/2 flex-col justify-center md:flex-row">
-        <img className="py-12 pl-12 pr-12 md:pl-24 md:pr-0" src="/assets/christine_fitzpatrick.png" />
+        <img className="py-12 pl-12 pr-12 md:pl-24 md:pr-0" src="/christine_fitzpatrick.png" />
         <div className="flex h-auto w-full flex-col justify-center pl-12 md:w-2/5">
             <h1 className="pb-12 text-2xl tracking-[0.2em] md:text-4xl">
                 Delivering the best design and service in the industry for over two decades.

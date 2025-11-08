@@ -6,7 +6,7 @@ function Nav(){
             <NavItem destination="/" name="HOME"/>
             <NavItem destination="/about" name="ABOUT"/>
             <NavItem destination="/projects" name="PROJECTS"/>
-            <NavItem destination="/contacts" name="CONTACTS"/>
+            <NavItem destination="/contact" name="CONTACT"/>
         </nav> 
     )
 }
@@ -19,14 +19,14 @@ function NavItem({destination, name}: {destination: string, name: string}){
 
 function Header(){
     return (
-    <div className="flex-col lg:flex-row pb-4 lg:pb-9 p-9 flex h-auto min-h-[16.67%] w-full justify-between text-xl text-[#aec7c0]">
+    <div className="flex-col lg:flex-row pb-4 lg:pb-9 p-5 sm:p-9 flex h-auto min-h-[16.67%] w-full justify-between text-2xl text-[#aec7c0]">
         <div>
             {/* Logo  */}
-            <Link to="/" className="text-left text-2xl sm:text-4xl leading-[1] tracking-[0.3em] md:text-[46px] text-white">
+            <Link to="/" className="text-left text-2xl sm:text-4xl leading-[1] tracking-[0.2em] md:text-[46px] text-white">
                 FITZPATRICK DESIGN, INC.
             </Link>
-            <h2 className="mt-4 text-2xl tracking-widest ">
-                    Cabinetry design for any room in your home
+            <h2 className="mt-4 text-base tracking-widest ">
+                CABINETRY DESIGN FOR ANY ROOM IN YOUR HOME
             </h2>
         </div>
         {/* Navigation Bar */}

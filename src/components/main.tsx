@@ -7,7 +7,7 @@ import Footer from './footer.tsx'
 import Home from './home.tsx';
 import About from './about.tsx';
 import Projects from './projects.tsx';
-import Contacts from './contacts.tsx';
+import Contact from './contact.tsx';
 
 import "../css/styles.css"; 
 
@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')!).render(
                     <Route path="/" element={<Home />}/>
                     <Route path="/about" element={<About />}/>
                     <Route path="/projects" element={<Projects />}/>
-                    <Route path="/contacts" element={<Contacts />}/>
+                    <Route path="/contact" element={<Contact />}/>
                 </Routes>
             </div>
             <Footer/>

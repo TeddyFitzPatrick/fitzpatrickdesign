@@ -14,28 +14,22 @@ function Footer(){
                     <Link to="/">HOME</Link>
                     <Link to="/about">ABOUT</Link>
                     <Link to="/projects">PROJECTS</Link>
-                    <Link to="/contacts">CONTACTS</Link>
+                    <Link to="/contact">CONTACT</Link>
                 </nav>
-                {/* <nav className="hidden md:flex m-0 list-none flex-col items-center justify-center pl-4 text-center tracking-[0.2em] md:pl-24">
-                    <a href="index.html" className="p-4 font-bold text-white hover:underline">HOME</a>
-                    <a href="html/about.html" className="p-4 hover:underline">ABOUT</a>
-                    <a href="html/projects.html" className="p-4 hover:underline">PROJECTS</a>
-                    <a href="html/contacts.html" className="p-4 hover:underline">CONTACTS</a>
-                </nav> */}
                 <div className="flex h-full w-full items-center justify-center md:justify-end">
                     <div className="pr-0 sm:pr-12 flex h-fit w-auto flex-col space-y-4 text-lg sm:text-xl md:text-2xl tracking-wide">
                         <div className="flex flex-row items-center">
-                            <img src="/assets/svg/pinpoint.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
+                            <img src="/svg/pinpoint.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
                             <a target="_blank" href="https://maps.app.goo.gl/1ZY5ScefcBgpdptd9" className="font-bold hover:underline hover:text-cyan-400">Larchmont, NY 10538</a>
                         </div>
             
                         <div className="flex flex-row items-center">
-                            <img src="/assets/svg/phone_icon.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
+                            <img src="/svg/phone_icon.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
                             <p className="font-bold">(914) 500-5232</p>
                         </div>
             
                         <div className="flex flex-row items-center">
-                            <img src="/assets/svg/mail.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
+                            <img src="/svg/mail.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
                             <a target="_blank" href="mailto:info@fitzpatrickdesigninc.com"
                             className="font-bold hover:underline hover:text-cyan-400">info@fitzpatrickdesigninc.com</a>
                         </div>
