@@ -1,62 +1,114 @@
+import Carousel from "./carousel";
+
 function Projects(){
-    return (<div className="flex h-auto w-full flex-wrap pt-6 px-2 md:px-12">
-        <ProjectPanel 
-        title="Charming Black and White in Chappaqua" 
-        imgPath="/projects/chappaqua_black_white/cover.jpg"/>
+    type Project = {
+        title: string,
+        basePath: string,
+        numSlides: number
+    };
+    const whiteKitchenProjects: Project[] = [
+        {
+            title: "Bright Bronxville Transitional",
+            basePath: "/projects/bronxville_bright/",
+            numSlides: 21
+        },
+        {
+            title: "Charming Black and White in Chappaqua",
+            basePath: "/projects/chappaqua_black_white/",
+            numSlides: 13
+        },
+        {
+            title: "Classic White Inset Kitchen in Larchmont",
+            basePath: "/projects/classic_white_larchmont/",
+            numSlides: 9
+        },
+        {
+            title: "Contemporary White Kitchen in Scarsdale",
+            basePath: "/projects/contemporary_white/",
+            numSlides: 27
+        },
+        {
+            title: "Contemporary White High Gloss and Wenge in Scarsdale",
+            basePath: "/projects/gloss_and_wenge/",
+            numSlides: 19
+        },
+        {
+            title: "Hastings Kitchen Makeover",
+            basePath: "/projects/hastings_makeover/",
+            numSlides: 29
+        },
+        {
+            title: "Light and Airy in Bronxville",
+            basePath: "/projects/light_bronxville/",
+            numSlides: 34
+        },
+        {
+            title: "Bronxville Off-White Open Kitchen",
+            basePath: "/projects/off_white_bronxville/",
+            numSlides:27
+        },
+        {
+            title: "Off-White and Retro Red Accented Kitchen",
+            basePath: "/projects/off_white_retro/",
+            numSlides: 28
+        },
+        {
+            title: "White, Blue, and Brass in Bronxville",
+            basePath: "/projects/white_brass_bronxville/",
+            numSlides: 33
+        },
+        {
+            title: "Transitional White Kitchen in Pelham Manor",
+            basePath: "/projects/pelham_manor/",
+            numSlides: 19
+        },
+    ];
 
-        <ProjectPanel
-        title="Off-White and Retro Red Accented Kitchen"
-        imgPath="/projects/off_white_retro/cover.jpg"/>
+    // const woodKitchenProjects: Project[] = [
+    //     {
+    //         title: "Stained Beech and Painted Maple in Rye",
+    //         basePath: "/projects/beech_maple_rye/",
+    //         numSlides: 33
+    //     },
+    // ];
 
-        <ProjectPanel
-        title="Light and Airy in Bronxville"
-        imgPath="/projects/light_bronxville/cover.jpg"/>
 
-        <ProjectPanel
-        title="Contemporary White Kitchen in Scarsdale"
-        imgPath="/projects/contemporary_white/cover.jpg"/>
+    return <>
+    <div className="flex w-full flex-wrap pt-6 px-2 md:px-12">
 
-        <ProjectPanel
-        title="Hastings Kitchen Makeover"
-        imgPath="/projects/hastings_makeover/cover.jpg"/>
+        {/* White Kitchen Projects */}
+        <h1 className="w-full h-fit text-white font-extrabold text-2xl sm:text-4xl">
+            White Kitchens
+        </h1>
+        <hr className="bg-white h-0.5 w-full mt-2 mb-6"/>
+        {whiteKitchenProjects.map((project, index) => (
+            <ProjectPanel title={project.title} basePath={project.basePath} numSlides={project.numSlides} key={index}/>
+        ))}
 
-        <ProjectPanel
-        title="White, Blue, and Brass in Bronxville"
-        imgPath="/projects/white_brass_bronxville/cover.jpg"/>
-
-        <ProjectPanel
-        title="Contemporary White High Gloss and Wenge in Scarsdale"
-        imgPath="/projects/gloss_and_wenge/cover.jpg"/>
-
-        <ProjectPanel
-        title="Transitional White Kitchen in Pelham Manor"
-        imgPath="/projects/pelham_manor/cover.jpg"/>
-
-        <ProjectPanel
-        title="Bronxville Off-White Open Kitchen"
-        imgPath="/projects/off_white_bronxville/cover.jpg"/>
-
-        <ProjectPanel
-        title="Bright Bronxville Transitional"
-        imgPath="/projects/bronxville_bright/cover.jpg"/>
-
-        <ProjectPanel
-        title="Stained Beech and Painted Maple in Rye"
-        imgPath="/projects/beech_maple_rye/cover.jpg"/>
-
-        <ProjectPanel
-        title="Classic White Inset Kitchen in Larchmont"
-        imgPath="/projects/classic_white_larchmont/cover.jpg"/>
-    </div>);
+        {/* Stained Wood Kitchen Projects  */}
+        {/* <h1 className="w-full h-fit text-white font-extrabold text-2xl sm:text-4xl mt-8">
+            Stained Wood Kitchens
+        </h1>
+        <hr className="bg-white h-0.5 w-full mt-2 mb-6"/>
+        {woodKitchenProjects.map((project, index) => (
+            <ProjectPanel title={project.title} basePath={project.basePath} numSlides={project.numSlides} key={index}/>
+        ))} */}
+    </div>
+    </>;
 }
 
-function ProjectPanel({title, imgPath}: {title: string, imgPath: string}){
-    return (
-        <button className="appearance-none flex mb-8 flex-col justify-center items-center w-full md:w-1/2 lg:w-1/3">
-            <h1 className="text-md font-bold hover:underline">{title}</h1>
-            <img className="rounded-xl aspect-square w-[95%] h-[95%]" src={imgPath} alt="kitchen photo" />   
-        </button>
-    );
+function ProjectPanel({title, basePath, numSlides}: {title: string, basePath: string, numSlides: number}){
+    const imagePaths: string[] = [];
+    imagePaths.push(basePath + "cover.jpg")
+    for (let index = 1; index < numSlides; index++){
+        imagePaths.push(basePath + `s${index}.jpg`);
+    }
+    return <>
+    <div className="appearance-none flex mb-8 flex-col justify-center items-center w-full md:w-1/2 lg:w-1/3">
+        <h1 className="text-md font-bold hover:underline">{title}</h1>
+        <Carousel imagePaths={imagePaths} classStyles="rounded-xl aspect-square w-[95%] h-[95%]"/>
+    </div>
+    </>;
 }
 
 export default Projects;

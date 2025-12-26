@@ -1,9 +1,4 @@
-import {useEffect, useRef} from 'react';
-// @ts-ignore
-import Glide from '@glidejs/glide';
-import '@glidejs/glide/dist/css/glide.core.min.css';
-import '@glidejs/glide/dist/css/glide.theme.min.css';
-
+import Carousel from './carousel';
 // Carousel images
 const carouselImgs = [
   "/slideshow/bronxille_cabinetry.jpg",
@@ -14,43 +9,9 @@ const carouselImgs = [
   "/slideshow/white_blue_brass_bronx.jpg",
 ];
 
-function GlideCarousel(){
-    const glideRef = useRef<HTMLDivElement | null>(null);
-    
-    useEffect(() => {
-        const glide = new Glide(glideRef.current);
-        if (!glide) return;
-
-        glide.mount();
-
-        return () => glide.destroy();
-    });
-
-    return (
-    <div className="glide overflow-hidden" ref={glideRef}>
-        <div className="glide__track" data-glide-el="track">
-            <ul className="glide__slides">
-                {/* photo slides as list elements  */}
-                {carouselImgs.map((src, index) => (
-                    <li className="glide__slide flex items-center justify-center" key={index}>
-                        <img src={src} alt={`Photo ${index + 1}`} className="w-[95vw] h-[50vh] sm:h-[70vh]" />
-                    </li>
-                ))}
-            </ul>
-        </div>
-
-        {/* Optional Navigation */}
-        <div className="glide__arrows" data-glide-el="controls">
-            <button className="glide__arrow glide__arrow--left " data-glide-dir="<">‹</button>
-            <button className="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
-        </div>
-    </div>
-    );
-}
-
 function Home(){
-    return (<>
-        <GlideCarousel/>
+    return <>
+        <Carousel imagePaths={carouselImgs} classStyles="w-[95vw] h-[50vh] sm:h-[70vh]"/>
 
         {/* Expert Design & Installation */}
         <div className="lg:py-16 px-2 md:px-12 flex h-auto w-full flex-col items-center justify-center text-left text-white lg:w-auto lg:flex-row">
@@ -103,7 +64,7 @@ function Home(){
             </div>
             <img className="w-full lg:w-1/3 p-3 lg:pl-0 resize-none object-cover" src="/bathroom_demo.jpg" />
         </div> */}
-    </>);
+    </>
 }
 
 export default Home;
