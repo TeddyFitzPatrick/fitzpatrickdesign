@@ -1,12 +1,13 @@
 import Carousel from './carousel';
 // Carousel images
 const carouselImgs = [
-  "/slideshow/bronxille_cabinetry.jpg",
-  "/slideshow/contemporary_white_kitchen.jpg",
-  "/slideshow/hastings_kitchen_makeover.jpg",
-  "/slideshow/home_design.jpg",
-  "/slideshow/off_white_retro_red.jpg",
-  "/slideshow/white_blue_brass_bronx.jpg",
+    "/slideshow/chappaqua_black_white.jpg",
+    "/slideshow/contemporary_white_kitchen.jpg",
+    "/slideshow/hastings_kitchen_makeover.jpg",
+    "/slideshow/home_design.jpg",
+    "/slideshow/off_white_retro_red.jpg",
+    "/slideshow/white_blue_brass_bronx.jpg",
+    "/slideshow/bronxille_cabinetry.jpg",
 ];
 
 function Home(){

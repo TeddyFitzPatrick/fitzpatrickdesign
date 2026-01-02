@@ -63,7 +63,6 @@ function Projects(){
             numSlides: 19
         },
     ];
-
     // const woodKitchenProjects: Project[] = [
     //     {
     //         title: "Stained Beech and Painted Maple in Rye",
@@ -71,8 +70,6 @@ function Projects(){
     //         numSlides: 33
     //     },
     // ];
-
-
     return <>
     <div className="flex w-full flex-wrap pt-6 px-2 md:px-12">
 

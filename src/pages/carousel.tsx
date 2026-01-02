@@ -20,7 +20,7 @@ export default function Carousel ({imagePaths, classStyles}: {imagePaths: string
                 {/* photo slides as list elements  */}
                 {imagePaths.map((src, index) => (
                     <li className="glide__slide flex items-center justify-center" key={index}>
-                        <img src={src} alt={`Photo ${index + 1}`} className={classStyles} />
+                        <img src={src} alt={`Photo ${index + 1}`} className={`object-contain` + classStyles} />
                     </li>
                 ))}
             </ul>
