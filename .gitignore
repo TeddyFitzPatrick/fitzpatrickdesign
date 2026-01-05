@@ -40,3 +40,8 @@ vite.cache/
 
 # Typescript cache
 *.tsbuildinfo
+
+# firebase
+.firebaserc
+firebase.json
+.firebase
