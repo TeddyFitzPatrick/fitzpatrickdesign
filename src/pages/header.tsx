@@ -4,8 +4,8 @@ function Nav(){
     return (  
         <nav className="text-xs lg:text-xl flex flex-row pt-4 md:pt-0 items-center justify-center tracking-[0.2em]">
             <NavItem destination="/" name="HOME"/>
-            <NavItem destination="/about" name="ABOUT"/>
             <NavItem destination="/projects" name="PROJECTS"/>
+            <NavItem destination="/about" name="ABOUT"/>
             <NavItem destination="/contact" name="CONTACT"/>
         </nav> 
     )
