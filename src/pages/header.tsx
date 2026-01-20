@@ -1,24 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Nav(){
-    return (  
+    return <>
         <nav className="text-xs lg:text-xl flex flex-row pt-4 md:pt-0 items-center justify-center tracking-[0.2em]">
-            <NavItem destination="/" name="HOME"/>
-            <NavItem destination="/projects" name="PROJECTS"/>
-            <NavItem destination="/about" name="ABOUT"/>
-            <NavItem destination="/contact" name="CONTACT"/>
+            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "unactive")}>HOME</NavLink>
+            <NavLink to="/white" className={({ isActive }) => (isActive ? "active" : "unactive")}>WHITE KITCHENS</NavLink>
+            <NavLink to="/wood" className={({ isActive }) => (isActive ? "active" : "unactive")}>WOOD KITCHENS</NavLink>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "unactive")}>ABOUT</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "unactive")}>CONTACT</NavLink>
         </nav> 
-    )
+    </>
 }
-
-function NavItem({destination, name}: {destination: string, name: string}){
-    return (
-        <Link to={destination} className="p-2 sm:p-3 hover:underline">{name}</Link>
-    )
-}
-
 function Header(){
-    return (
+    return <>
     <div className="flex-col lg:flex-row pb-4 lg:pb-9 p-5 sm:p-9 flex h-auto min-h-[16.67%] w-full justify-between text-2xl text-[#aec7c0]">
         <div>
             {/* Logo  */}
@@ -32,7 +26,7 @@ function Header(){
         {/* Navigation Bar */}
         <Nav/>
     </div>
-    );
+    </>
 }
 
 export default Header;

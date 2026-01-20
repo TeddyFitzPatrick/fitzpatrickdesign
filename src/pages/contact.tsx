@@ -1,23 +1,28 @@
 function Contact(){
     return <>
-        <div className="flex flex-col text-xl space-y-4 w-full h-[50vh] items-center">
-            <h1 className="pb-6 text-4xl md:text-6xl tracking-[0.2em]">Contact</h1>
-        
-            <div className="flex flex-row items-center">
-                <img src="/svg/pinpoint.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
-                <a target="_blank" href="https://maps.app.goo.gl/1ZY5ScefcBgpdptd9" className="font-bold hover:underline hover:text-cyan-400">Larchmont, NY 10538</a>
-            </div>
+        <div className="flex flex-col text-xl space-y-4 w-full h-[100vh] items-center">
+            <div className="flex flex-col space-y-2">
+                <h1 className="text-2xl md:text-7xl tracking-[0.1em] my-6">Contact</h1>
+                <ContactMethod imgSrc="/svg/pinpoint.svg" text="Larchmont, NY 10538"/>
+                <ContactMethod imgSrc="/svg/phone_icon.svg" text="(914) 500-5232"/>
+                <ContactMethod imgSrc="/svg/mail.svg" text="info@fitzpatrickdesigninc.com"/>
+                <div className="flex flex-row items-center">
+                    <img src={"/svg/houzz.svg"} className="w-6 h-6 fill-white stroke-white mr-2"/>
+                    <a target="_blank" href="https://www.houzz.com/professionals/kitchen-and-bath-designers/fitzpatrick-design-and-cabinetry-pfvwus-pf~251686724" 
+                        className="tracking-[0.05em] hover:underline">Houzz</a>
+                </div>
 
-            <div className="flex flex-row items-center">
-                <img src="/svg/phone_icon.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
-                <p className="font-bold">(914) 500-5232</p>
-            </div>
-
-            <div className="flex flex-row items-center">
-                <img src="/svg/mail.svg" className="w-6 h-6 fill-cyan-500 mr-2"/>
-                <a className="font-bold tracking-[0.05em]">info@fitzpatrickdesigninc.com</a>
             </div>
         </div>  
+    </>
+}
+
+export function ContactMethod({imgSrc, text}: {imgSrc: string, text: string}){
+    return <>
+        <div className="flex flex-row items-center space-x-2">
+            <img src={imgSrc} className="w-6 h-6 fill-white stroke-white"/>
+            <a className="tracking-[0.05em]">{text}</a>
+        </div>
     </>
 }
 

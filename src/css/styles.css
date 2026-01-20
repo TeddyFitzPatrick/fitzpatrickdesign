@@ -5,3 +5,29 @@
 * {
     @apply font-['Montserrat']
 }
+
+/* Nav (Header) */
+.active {
+    @apply p-2 sm:p-3 hover:underline text-white font-extrabold
+}
+
+.unactive {
+    @apply p-2 sm:p-3 **:hover:underline    
+}
+/* Nav Footer  */
+.active_footer {
+    @apply hover:underline text-white 
+}
+
+.unactive_footer {
+    @apply hover:underline
+}
+/* Review/Project Panels  */
+.paneled{
+    @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 2xl:gap-8
+}
+
+/* Houzz Awards  */
+.award{
+    @apply shadow-2xl flex-shrink-0 bg-slate-900 rounded-xl hover:scale-105
+}
