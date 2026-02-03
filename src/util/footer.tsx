@@ -1,5 +1,5 @@
 import { NavLink, Link} from 'react-router-dom';
-import { ContactMethod } from './contact';
+import { ContactMethod } from '../pages/contact';
 
 const houzzURL: string = "https://www.houzz.com/professionals/kitchen-and-bath-designers/fitzpatrick-design-and-cabinetry-pfvwus-pf~251686724";
 
@@ -18,8 +18,7 @@ function Footer(){
             {/* Navigation  */}
             <nav className="space-y-4 hidden lg:flex m-0 list-none flex-col justify-evenly tracking-[0.2em]">
                 <NavLink to="/" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>HOME</NavLink>
-                <NavLink to="/white" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>WHITE KITCHENS</NavLink>
-                <NavLink to="/wood" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>WOOD KITCHENS</NavLink>
+                <NavLink to="/projects" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>PROJECTS</NavLink>
                 <NavLink to="/about" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>ABOUT</NavLink>
                 <NavLink to="/contact" className={({ isActive }) => (isActive ? "active_footer" : "unactive_footer")}>CONTACT</NavLink>
             </nav>

@@ -1,4 +1,6 @@
 import Carousel from './carousel';
+import { useState } from 'react';
+
 // Carousel images
 const carouselImgs = [
     "/slideshow/chappaqua_black_white.jpg",
@@ -12,14 +14,14 @@ const carouselImgs = [
 
 function Home(){
     return <>
-        <Carousel imagePaths={carouselImgs} classStyles="w-[95vw] h-[50vh] sm:h-[70vh]"/>
-
+        {/* <Carousel imagePaths={carouselImgs} classStyles="w-[95vw] h-[50vh] sm:h-[70vh]"/> */}
+        <Example/>
         {/* Expert Design & Installation */}
         <div className="lg:py-16 px-2 md:px-12 flex h-auto w-full flex-col items-center justify-center text-left text-white lg:w-auto lg:flex-row">
             <h1 className="py-3 pr-2 lg:py-12 flex w-full h-full items-start lg:w-1/3 max-w-screen tracking-[0.2em] text-4xl">
                 EXPERT DESIGN & INSTALLATION
             </h1>
-            <p className="h-auto text-3xl tracking-wider max-w-screen w-full lg:w-2/3">
+            <p className="text-2xl sm:text-3xl tracking-wider max-w-screen w-full lg:w-2/3">
                 <b>FitzPatrick Design is an eight-times winner of the Best of Houzz
                     award.</b>
                 We are a team of seasoned cabinet installers and designers with
@@ -67,5 +69,68 @@ function Home(){
         </div> */}
     </>
 }
+
+
+function Example(){
+    // const cardData = [
+    //     {
+    //         title: "Unlock Your Creative Flow",
+    //         image: "https://images.unsplash.com/photo-1543487945-139a97f387d5?w=1200&auto=format&fit=crop&q=60",
+    //     },
+    //     {
+    //         title: "Design Your Digital Future",
+    //         image: "https://images.unsplash.com/photo-1529254479751-faeedc59e78f?w=1200&auto=format&fit=crop&q=60",
+    //     },
+    //     {
+    //         title: "Build with Passion, Ship with Pride",
+    //         image: "https://images.unsplash.com/photo-1618327907215-4e514efabd41?w=1200&auto=format&fit=crop&q=60",
+    //     },
+    //     {
+    //         title: "Think Big, Code Smart",
+    //         image: "https://images.unsplash.com/photo-1583407723467-9b2d22504831?w=1200&auto=format&fit=crop&q=60",
+    //     },
+    // ];
+
+    const cardData = carouselImgs.map(path => {
+        return {title: "ok", image: path}
+    })
+
+    return (
+        <>
+            <style>{`
+                .marquee-inner {
+                    animation: marqueeScroll linear infinite;
+                }
+
+                @keyframes marqueeScroll {
+                    0% {
+                        transform: translateX(0%);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            `}</style>
+            <div className="overflow-hidden w-full relative mx-auto">
+                <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+                <div className="marquee-inner flex w-fit" style={{ animationPlayState: "running", animationDuration: cardData.length * 7000 + "ms" }}>
+                    <div className="flex">
+                        {[...cardData, ...cardData].map((card, index) => (
+                            <div key={index} className="w-60 sm:w-120 mx-2 h-[60vh] relative group transition-all duration-300">
+                                <img src={card.image} alt="card" className="w-full h-full object-cover" />
+                                {/* <div className="flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-0 backdrop-blur-md left-0 w-full h-full bg-black/20">
+                                    <p className="text-white text-lg font-semibold text-center">{card.title}</p>
+                                </div> */}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+            </div>
+        </>
+    );
+};
+
 
 export default Home;

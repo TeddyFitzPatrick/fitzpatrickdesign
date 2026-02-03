@@ -1,16 +1,15 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from './header.tsx';
-import Footer from './footer.tsx'
+import Header from '../util/header.tsx';
+import Footer from '../util/footer.tsx'
 
 import Home from './home.tsx';
 import About from './about.tsx';
-import White from './white.tsx';
-import Wood from './wood.tsx';
+import Projects from './projects.tsx'; 
 import Contact from './contact.tsx';
 
-import "../css/styles.css"; 
+import "../styles.css"; 
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -20,8 +19,7 @@ createRoot(document.getElementById('root')!).render(
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/about" element={<About />}/>
-                    <Route path="/white" element={<White />}/>
-                    <Route path="/wood" element={<Wood />}/>
+                    <Route path="/projects" element={<Projects />}/>
                     <Route path="/contact" element={<Contact />}/>
                 </Routes>
             </div>

@@ -1,5 +1,4 @@
 function About(){
-
     const reviews: Record<string, string> = {
         "S R": `Christine and Edward of Fitzpatrick Designs did an amazing job on our kitchen redesign. From the
 first meeting to the final day they were thoughtful, responsive and actively involved. They are a
@@ -180,7 +179,7 @@ and sets himself apart from the rest.`
         </div>
         
         {/* Quote */}
-        <div className="flex h-64 w-full flex-col items-center justify-center space-y-3 bg-slate-600 text-center">
+        <div className="flex h-64 w-full flex-col items-center justify-center space-y-3 bg-slate-800 text-center">
             <p className="p-4 sm:p-0 text-4xl font-light tracking-wider">
                 "the kitchen in my home is to die for"
             </p>
@@ -188,23 +187,42 @@ and sets himself apart from the rest.`
         </div>
 
         {/* Proven record of success title  */}
-        <h1 className="pb-2 my-12 text-4xl font-bold tracking-wide text-center w-fit">
-            Our proven record of success:
+        <h1 className="pb-2 my-12 text-4xl font-bold tracking-wide text-center font-[Poppins]">
+            Our Testimonials
         </h1>
 
         {/* Record of success quotes grid */}
-        <div className="paneled px-4 md:px-8">
-            {Object.keys(reviews).sort((keyA, keyB) => {return reviews[keyB].length - reviews[keyA].length}).map((clientName, index) => 
-                <div className="bg-gradient-to-br from-gray-900 to-gray-700 rounded-xl p-4 shadow-2xl border-x-4 border-white max-h-128 overflow-y-auto" key={index}>
-                    <h1 className="py-2 text-4xl font-extrabold underline">{clientName}</h1>
-                    <p className="text-xl lg:text-2xl">
-                        "{reviews[clientName]}"
-                    </p>
-                    {/* <a className="text-xl font-bold hover:underline" href={reviewURL}>Read More...</a> */}
-                </div>
+        <div className="flex flex-wrap items-center justify-center gap-6"> 
+            {Object.keys(reviews).sort((keyA, keyB) => {return reviews[keyA].length - reviews[keyB].length}).map((clientName, index) => 
+                <Testimonial key={index} clientName={clientName} reviewContent={reviews[clientName]}/>
             )}
         </div>
     </div>
+}
+
+function Testimonial({clientName, reviewContent}: { clientName: string, reviewContent: string}){
+        return <div className="relative text-sm w-80 rounded-lg bg-slate-800 h-88 shadow-[0px_4px_15px_0px] shadow-black/5 overflow-hidden">
+                <div className=" flex items-center gap-4 px-5 py-4 bg-slate-900">
+                        <h1 className="text-lg font-medium text-white truncate">{clientName}</h1>
+                </div>
+                <div className="p-5 pb-7 bg-slate-800">
+                        <div className="flex gap-0.5 flex-row">
+                                {/* five stars */}
+                                {[1, 2, 3, 4, 5].map(num => (
+                                <svg key={num} width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.525.464a.5.5 0 0 1 .95 0l2.107 6.482a.5.5 0 0 0 .475.346h6.817a.5.5 0 0 1 .294.904l-5.515 4.007a.5.5 0 0 0-.181.559l2.106 6.483a.5.5 0 0 1-.77.559l-5.514-4.007a.5.5 0 0 0-.588 0l-5.514 4.007a.5.5 0 0 1-.77-.56l2.106-6.482a.5.5 0 0 0-.181-.56L.832 8.197a.5.5 0 0 1 .294-.904h6.817a.5.5 0 0 0 .475-.346z" fill="#FF532E"/>
+                                </svg>
+                                ))}
+                        </div>
+                        <p className="text-slate-100 mt-5 max-h-40 overflow-y-auto">{reviewContent}</p>
+                        
+                </div>
+                <svg className="flex-shrink-0 w-[44px] h-[40px] absolute left-5 bottom-5" width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33.172 5.469q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 26.539 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.923-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203m-20.625 0q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 5.914 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.922-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203" fill="#2563EB"/>
+                </svg>  
+                {/* <a href="#" className="text-red-500 underline px-5">Read more</a> */}
+        </div>        
+
 }
 
 export default About;
